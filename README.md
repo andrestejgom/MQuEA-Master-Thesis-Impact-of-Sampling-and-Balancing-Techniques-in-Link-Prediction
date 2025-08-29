@@ -29,9 +29,6 @@ Individual experiment files for each synthetic network:
 ### Real-World Applications
 - **Directors Networks**: `directors_1976.py`, `directors_1996.py`, `directors_2001.py`
 
-### Data
-- **`Dutch Corporate Network Board Interlocks 1976 1996 2001 V1.xls`** - Source data for real-world validation
-
 ## Methodology
 
 ### Network Generation
