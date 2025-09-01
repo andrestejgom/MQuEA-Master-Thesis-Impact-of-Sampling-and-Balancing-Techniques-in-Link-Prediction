@@ -1,0 +1,43 @@
+{
+  "network_type": "directors_meetings_2001",
+  "year": 2001,
+  "data_source": "Dutch Corporate Directors Meetings",
+  "description": "Dutch Corporate Directors Network 2001",
+  "network_properties": {
+    "nodes": 1721,
+    "edges": 9779,
+    "density": 0.006607,
+    "average_degree": 11.36,
+    "is_connected": false,
+    "number_connected_components": 102,
+    "average_clustering": 0.9308,
+    "average_path_length": 3.9192,
+    "is_simple": true,
+    "is_directed": false,
+    "has_weights": false,
+    "has_consecutive_node_ids": true,
+    "node_id_range": "0 to 1720"
+  },
+  "node_mapping_info": {
+    "has_remapping": true,
+    "total_nodes": 1721,
+    "original_id_range": [
+      500011,
+      600117
+    ],
+    "consecutive_id_range": [
+      0,
+      1720
+    ],
+    "mapping_files": [
+      "node_mapping.json",
+      "node_mapping.csv"
+    ]
+  },
+  "timestamp": "2025-08-29 14:36:20.178541",
+  "directory_path": "directors_meetings/directors_2001",
+  "file_format": "Pickle, EdgeList, DL, Mappings",
+  "original_file": "Dutch Corporate Network Board Interlocks 1976 1996 2001 V1.xls",
+  "sheet_name": "Meetings Between Directors 2001",
+  "reference": "Heemskerk, E.M. (2007), Decline of the Corporate Community"
+}
