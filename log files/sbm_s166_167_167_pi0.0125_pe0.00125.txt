@@ -1,0 +1,1385 @@
+LINK PREDICTION EXPERIMENT ON BARABÁSI-ALBERT NETWORK
+============================================================
+Loaded network: Stochastic block model with communities of sizes [166, 167, 167], intra-community probability 0.0125, inter-community probability 0.00125
+Network properties: {'nodes': 500, 'edges': 634, 'density': 0.005082164328657315, 'average_degree': 2.536, 'average_clustering': 0.0029619047619047615, 'is_connected': False, 'average_path_length': 6.804906138431417, 'degree_assortativity': -0.03382417062856212, 'diameter': 16, 'transitivity': 0.003878474466709761}
+
+================================================================================
+EXPERIMENT 1: Complete Negative Sampling
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using complete negative sampling with proportional distribution
+Using proportions - Train: 80.1%, Test: 19.9%
+Proportional negative sampling distribution:
+  Total possible edges: 124750
+  Total existing edges: 634
+  Total possible negative edges: 124116
+  Train non-edges: 99449 (80.1%)
+  Test non-edges: 24667 (19.9%)
+  Total non-edges used: 124116
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 99449 non-edges (complete sampling)
+  Test: 126 edges, 24667 non-edges
+  Complete negative sampling applied
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x0.9
+    Test AUC: 0.4414
+    Test AUPR: 0.0047 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x1.0
+    Test AUC: 0.5001
+    Test AUPR: 0.0052 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x1.2
+    Test AUC: 0.4944
+    Test AUPR: 0.0060 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x1.0
+    Test AUC: 0.4694
+    Test AUPR: 0.0051 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x1.2
+    Test AUC: 0.4892
+    Test AUPR: 0.0061 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x0.9
+    Test AUC: 0.4388
+    Test AUPR: 0.0047 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 2: Negative Ratio = 20.0, Sampling = random
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 20.00:1
+Negative sampling method: random
+Using RANDOM negative sampling
+Selected 10160 train non-edges from training graph
+Remaining non-edges after removing train non-edges: 113966 (from 124116 original)
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 10160 non-edges (ratio: 1:20.00)
+  Test: 126 edges, 2520 non-edges
+  Negative sampling ratio used: 20.0:1
+  Sampling method used: random
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.0
+    Test AUC: 0.4475
+    Test AUPR: 0.0457 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.7
+    Test AUC: 0.4996
+    Test AUPR: 0.0492 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x11.1
+    Test AUC: 0.5021
+    Test AUPR: 0.0562 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.5
+    Test AUC: 0.4755
+    Test AUPR: 0.0485 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x11.1
+    Test AUC: 0.4964
+    Test AUPR: 0.0563 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x8.9
+    Test AUC: 0.4449
+    Test AUPR: 0.0451 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 3: Negative Ratio = 20.0, Sampling = BRODER
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 20.00:1
+Negative sampling method: BRODER
+Using BRODER (multiple spanning trees) negative sampling
+  Need 10160 train non-edges and 2520 test non-edges
+  Applying Multiple Broder algorithm to select train non-edges...
+    Starting with graph containing 124242 edges.
+    Generating spanning tree #1...
+      Tree #1: Generated 499 edges
+      Removed tree edges. Graph now has 123743 edges
+      Total selected so far: 499 edges
+    Generating spanning tree #2...
+      Tree #2: Generated 499 edges
+      Removed tree edges. Graph now has 123244 edges
+      Total selected so far: 998 edges
+    Generating spanning tree #3...
+      Tree #3: Generated 499 edges
+      Removed tree edges. Graph now has 122745 edges
+      Total selected so far: 1497 edges
+    Generating spanning tree #4...
+      Tree #4: Generated 499 edges
+      Removed tree edges. Graph now has 122246 edges
+      Total selected so far: 1996 edges
+    Generating spanning tree #5...
+      Tree #5: Generated 499 edges
+      Removed tree edges. Graph now has 121747 edges
+      Total selected so far: 2495 edges
+    Generating spanning tree #6...
+      Tree #6: Generated 499 edges
+      Removed tree edges. Graph now has 121248 edges
+      Total selected so far: 2994 edges
+    Generating spanning tree #7...
+      Tree #7: Generated 499 edges
+      Removed tree edges. Graph now has 120749 edges
+      Total selected so far: 3493 edges
+    Generating spanning tree #8...
+      Tree #8: Generated 499 edges
+      Removed tree edges. Graph now has 120250 edges
+      Total selected so far: 3992 edges
+    Generating spanning tree #9...
+      Tree #9: Generated 499 edges
+      Removed tree edges. Graph now has 119751 edges
+      Total selected so far: 4491 edges
+    Generating spanning tree #10...
+      Tree #10: Generated 499 edges
+      Removed tree edges. Graph now has 119252 edges
+      Total selected so far: 4990 edges
+    Generating spanning tree #11...
+      Tree #11: Generated 499 edges
+      Removed tree edges. Graph now has 118753 edges
+      Total selected so far: 5489 edges
+    Generating spanning tree #12...
+      Tree #12: Generated 499 edges
+      Removed tree edges. Graph now has 118254 edges
+      Total selected so far: 5988 edges
+    Generating spanning tree #13...
+      Tree #13: Generated 499 edges
+      Removed tree edges. Graph now has 117755 edges
+      Total selected so far: 6487 edges
+    Generating spanning tree #14...
+      Tree #14: Generated 499 edges
+      Removed tree edges. Graph now has 117256 edges
+      Total selected so far: 6986 edges
+    Generating spanning tree #15...
+      Tree #15: Generated 499 edges
+      Removed tree edges. Graph now has 116757 edges
+      Total selected so far: 7485 edges
+    Generating spanning tree #16...
+      Tree #16: Generated 499 edges
+      Removed tree edges. Graph now has 116258 edges
+      Total selected so far: 7984 edges
+    Generating spanning tree #17...
+      Tree #17: Generated 499 edges
+      Removed tree edges. Graph now has 115759 edges
+      Total selected so far: 8483 edges
+    Generating spanning tree #18...
+      Tree #18: Generated 499 edges
+      Removed tree edges. Graph now has 115260 edges
+      Total selected so far: 8982 edges
+    Generating spanning tree #19...
+      Tree #19: Generated 499 edges
+      Removed tree edges. Graph now has 114761 edges
+      Total selected so far: 9481 edges
+    Generating spanning tree #20...
+      Tree #20: Generated 499 edges
+      Removed tree edges. Graph now has 114262 edges
+      Total selected so far: 9980 edges
+    Generating spanning tree #21...
+      Tree #21: Generated 499 edges
+      Removed tree edges. Graph now has 113763 edges
+      Total selected so far: 10479 edges
+      Trimmed to exact target: 10160 edges
+    Generated 21 spanning trees with 10160 total edges
+Selected 10160 train non-edges using Multiple Broder Trees
+Remaining non-edges after removing train non-edges: 113970 (from 124116 original)
+  Applying Multiple Broder algorithm to select test non-edges...
+    Starting test selection with graph containing 113970 edges.
+    Generating test spanning tree #1...
+      Test tree #1: Generated 499 edges
+      Test total selected so far: 499 edges
+    Generating test spanning tree #2...
+      Test tree #2: Generated 499 edges
+      Test total selected so far: 998 edges
+    Generating test spanning tree #3...
+      Test tree #3: Generated 499 edges
+      Test total selected so far: 1497 edges
+    Generating test spanning tree #4...
+      Test tree #4: Generated 499 edges
+      Test total selected so far: 1996 edges
+    Generating test spanning tree #5...
+      Test tree #5: Generated 499 edges
+      Test total selected so far: 2495 edges
+    Generating test spanning tree #6...
+      Test tree #6: Generated 499 edges
+      Test total selected so far: 2994 edges
+      Trimmed test set to exact target: 2520 edges
+    Generated 6 test spanning trees with 2520 total edges
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 10160 non-edges (ratio: 1:20.00)
+  Test: 126 edges, 2520 non-edges
+  Negative sampling ratio used: 20.0:1
+  Sampling method used: BRODER
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x8.7
+    Test AUC: 0.4441
+    Test AUPR: 0.0443 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.6
+    Test AUC: 0.5004
+    Test AUPR: 0.0488 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x11.0
+    Test AUC: 0.4970
+    Test AUPR: 0.0559 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.3
+    Test AUC: 0.4702
+    Test AUPR: 0.0474 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x11.1
+    Test AUC: 0.4911
+    Test AUPR: 0.0565 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x8.6
+    Test AUC: 0.4405
+    Test AUPR: 0.0437 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 4: Negative Ratio = 20.0, Sampling = HRNE
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 20.00:1
+Negative sampling method: HRNE
+Using HRNE (HybridNodeEdgeSampler) negative sampling
+  Need 10160 train non-edges and 2520 test non-edges
+  Applying HRNE to select train non-edges...
+Selected 10160 train non-edges using HRNE
+Remaining non-edges after removing train non-edges: 113962 (from 124116 original)
+  Applying HRNE to select test non-edges...
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 10160 non-edges (ratio: 1:20.00)
+  Test: 126 edges, 2520 non-edges
+  Negative sampling ratio used: 20.0:1
+  Sampling method used: HRNE
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x8.6
+    Test AUC: 0.4392
+    Test AUPR: 0.0437 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.6
+    Test AUC: 0.4998
+    Test AUPR: 0.0486 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x10.6
+    Test AUC: 0.4899
+    Test AUPR: 0.0539 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x9.3
+    Test AUC: 0.4684
+    Test AUPR: 0.0473 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x10.7
+    Test AUC: 0.4840
+    Test AUPR: 0.0542 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x8.5
+    Test AUC: 0.4364
+    Test AUPR: 0.0432 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 5: Negative Ratio = 10.0, Sampling = random
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 10.00:1
+Negative sampling method: random
+Using RANDOM negative sampling
+Selected 5080 train non-edges from training graph
+Remaining non-edges after removing train non-edges: 119040 (from 124116 original)
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 5080 non-edges (ratio: 1:10.00)
+  Test: 126 edges, 1260 non-edges
+  Negative sampling ratio used: 10.0:1
+  Sampling method used: random
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x17.1
+    Test AUC: 0.4508
+    Test AUPR: 0.0871 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x18.3
+    Test AUC: 0.4988
+    Test AUPR: 0.0928 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x20.9
+    Test AUC: 0.5032
+    Test AUPR: 0.1060 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x17.9
+    Test AUC: 0.4772
+    Test AUPR: 0.0908 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x20.9
+    Test AUC: 0.4998
+    Test AUPR: 0.1065 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x17.0
+    Test AUC: 0.4494
+    Test AUPR: 0.0862 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 6: Negative Ratio = 10.0, Sampling = BRODER
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 10.00:1
+Negative sampling method: BRODER
+Using BRODER (multiple spanning trees) negative sampling
+  Need 5080 train non-edges and 1260 test non-edges
+  Applying Multiple Broder algorithm to select train non-edges...
+    Starting with graph containing 124242 edges.
+    Generating spanning tree #1...
+      Tree #1: Generated 499 edges
+      Removed tree edges. Graph now has 123743 edges
+      Total selected so far: 499 edges
+    Generating spanning tree #2...
+      Tree #2: Generated 499 edges
+      Removed tree edges. Graph now has 123244 edges
+      Total selected so far: 998 edges
+    Generating spanning tree #3...
+      Tree #3: Generated 499 edges
+      Removed tree edges. Graph now has 122745 edges
+      Total selected so far: 1497 edges
+    Generating spanning tree #4...
+      Tree #4: Generated 499 edges
+      Removed tree edges. Graph now has 122246 edges
+      Total selected so far: 1996 edges
+    Generating spanning tree #5...
+      Tree #5: Generated 499 edges
+      Removed tree edges. Graph now has 121747 edges
+      Total selected so far: 2495 edges
+    Generating spanning tree #6...
+      Tree #6: Generated 499 edges
+      Removed tree edges. Graph now has 121248 edges
+      Total selected so far: 2994 edges
+    Generating spanning tree #7...
+      Tree #7: Generated 499 edges
+      Removed tree edges. Graph now has 120749 edges
+      Total selected so far: 3493 edges
+    Generating spanning tree #8...
+      Tree #8: Generated 499 edges
+      Removed tree edges. Graph now has 120250 edges
+      Total selected so far: 3992 edges
+    Generating spanning tree #9...
+      Tree #9: Generated 499 edges
+      Removed tree edges. Graph now has 119751 edges
+      Total selected so far: 4491 edges
+    Generating spanning tree #10...
+      Tree #10: Generated 499 edges
+      Removed tree edges. Graph now has 119252 edges
+      Total selected so far: 4990 edges
+    Generating spanning tree #11...
+      Tree #11: Generated 499 edges
+      Removed tree edges. Graph now has 118753 edges
+      Total selected so far: 5489 edges
+      Trimmed to exact target: 5080 edges
+    Generated 11 spanning trees with 5080 total edges
+Selected 5080 train non-edges using Multiple Broder Trees
+Remaining non-edges after removing train non-edges: 119046 (from 124116 original)
+  Applying Multiple Broder algorithm to select test non-edges...
+    Starting test selection with graph containing 119046 edges.
+    Generating test spanning tree #1...
+      Test tree #1: Generated 499 edges
+      Test total selected so far: 499 edges
+    Generating test spanning tree #2...
+      Test tree #2: Generated 499 edges
+      Test total selected so far: 998 edges
+    Generating test spanning tree #3...
+      Test tree #3: Generated 499 edges
+      Test total selected so far: 1497 edges
+      Trimmed test set to exact target: 1260 edges
+    Generated 3 test spanning trees with 1260 total edges
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 5080 non-edges (ratio: 1:10.00)
+  Test: 126 edges, 1260 non-edges
+  Negative sampling ratio used: 10.0:1
+  Sampling method used: BRODER
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x16.4
+    Test AUC: 0.4335
+    Test AUPR: 0.0832 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x18.0
+    Test AUC: 0.4984
+    Test AUPR: 0.0915 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x21.0
+    Test AUC: 0.4936
+    Test AUPR: 0.1065 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x17.6
+    Test AUC: 0.4745
+    Test AUPR: 0.0896 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x21.0
+    Test AUC: 0.4917
+    Test AUPR: 0.1065 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x16.2
+    Test AUC: 0.4356
+    Test AUPR: 0.0825 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 7: Negative Ratio = 10.0, Sampling = HRNE
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 10.00:1
+Negative sampling method: HRNE
+Using HRNE (HybridNodeEdgeSampler) negative sampling
+  Need 5080 train non-edges and 1260 test non-edges
+  Applying HRNE to select train non-edges...
+Selected 5080 train non-edges using HRNE
+Remaining non-edges after removing train non-edges: 119041 (from 124116 original)
+  Applying HRNE to select test non-edges...
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 5080 non-edges (ratio: 1:10.00)
+  Test: 126 edges, 1260 non-edges
+  Negative sampling ratio used: 10.0:1
+  Sampling method used: HRNE
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x17.0
+    Test AUC: 0.4358
+    Test AUPR: 0.0866 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x18.5
+    Test AUC: 0.5012
+    Test AUPR: 0.0942 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x20.8
+    Test AUC: 0.4930
+    Test AUPR: 0.1055 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x18.6
+    Test AUC: 0.4706
+    Test AUPR: 0.0943 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x21.1
+    Test AUC: 0.4878
+    Test AUPR: 0.1073 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x16.9
+    Test AUC: 0.4347
+    Test AUPR: 0.0859 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 8: Negative Ratio = 5.0, Sampling = random
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 5.00:1
+Negative sampling method: random
+Using RANDOM negative sampling
+Selected 2540 train non-edges from training graph
+Remaining non-edges after removing train non-edges: 121579 (from 124116 original)
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 2540 non-edges (ratio: 1:5.00)
+  Test: 126 edges, 630 non-edges
+  Negative sampling ratio used: 5.0:1
+  Sampling method used: random
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x30.8
+    Test AUC: 0.4375
+    Test AUPR: 0.1568 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x34.1
+    Test AUC: 0.5000
+    Test AUPR: 0.1733 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x37.9
+    Test AUC: 0.4957
+    Test AUPR: 0.1929 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x32.7
+    Test AUC: 0.4678
+    Test AUPR: 0.1662 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x38.4
+    Test AUC: 0.4928
+    Test AUPR: 0.1949 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x30.5
+    Test AUC: 0.4353
+    Test AUPR: 0.1548 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 9: Negative Ratio = 5.0, Sampling = BRODER
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 5.00:1
+Negative sampling method: BRODER
+Using BRODER (multiple spanning trees) negative sampling
+  Need 2540 train non-edges and 630 test non-edges
+  Applying Multiple Broder algorithm to select train non-edges...
+    Starting with graph containing 124242 edges.
+    Generating spanning tree #1...
+      Tree #1: Generated 499 edges
+      Removed tree edges. Graph now has 123743 edges
+      Total selected so far: 499 edges
+    Generating spanning tree #2...
+      Tree #2: Generated 499 edges
+      Removed tree edges. Graph now has 123244 edges
+      Total selected so far: 998 edges
+    Generating spanning tree #3...
+      Tree #3: Generated 499 edges
+      Removed tree edges. Graph now has 122745 edges
+      Total selected so far: 1497 edges
+    Generating spanning tree #4...
+      Tree #4: Generated 499 edges
+      Removed tree edges. Graph now has 122246 edges
+      Total selected so far: 1996 edges
+    Generating spanning tree #5...
+      Tree #5: Generated 499 edges
+      Removed tree edges. Graph now has 121747 edges
+      Total selected so far: 2495 edges
+    Generating spanning tree #6...
+      Tree #6: Generated 499 edges
+      Removed tree edges. Graph now has 121248 edges
+      Total selected so far: 2994 edges
+      Trimmed to exact target: 2540 edges
+    Generated 6 spanning trees with 2540 total edges
+Selected 2540 train non-edges using Multiple Broder Trees
+Remaining non-edges after removing train non-edges: 121580 (from 124116 original)
+  Applying Multiple Broder algorithm to select test non-edges...
+    Starting test selection with graph containing 121580 edges.
+    Generating test spanning tree #1...
+      Test tree #1: Generated 499 edges
+      Test total selected so far: 499 edges
+    Generating test spanning tree #2...
+      Test tree #2: Generated 499 edges
+      Test total selected so far: 998 edges
+      Trimmed test set to exact target: 630 edges
+    Generated 2 test spanning trees with 630 total edges
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 2540 non-edges (ratio: 1:5.00)
+  Test: 126 edges, 630 non-edges
+  Negative sampling ratio used: 5.0:1
+  Sampling method used: BRODER
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x32.5
+    Test AUC: 0.4398
+    Test AUPR: 0.1651 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x34.1
+    Test AUC: 0.5008
+    Test AUPR: 0.1733 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x37.7
+    Test AUC: 0.4912
+    Test AUPR: 0.1918 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x33.6
+    Test AUC: 0.4713
+    Test AUPR: 0.1708 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x38.0
+    Test AUC: 0.4855
+    Test AUPR: 0.1933 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x32.2
+    Test AUC: 0.4366
+    Test AUPR: 0.1636 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 10: Negative Ratio = 5.0, Sampling = HRNE
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 5.00:1
+Negative sampling method: HRNE
+Using HRNE (HybridNodeEdgeSampler) negative sampling
+  Need 2540 train non-edges and 630 test non-edges
+  Applying HRNE to select train non-edges...
+Selected 2540 train non-edges using HRNE
+Remaining non-edges after removing train non-edges: 121581 (from 124116 original)
+  Applying HRNE to select test non-edges...
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 2540 non-edges (ratio: 1:5.00)
+  Test: 126 edges, 630 non-edges
+  Negative sampling ratio used: 5.0:1
+  Sampling method used: HRNE
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x30.5
+    Test AUC: 0.4464
+    Test AUPR: 0.1550 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x33.1
+    Test AUC: 0.5000
+    Test AUPR: 0.1680 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x37.2
+    Test AUC: 0.5067
+    Test AUPR: 0.1891 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x31.5
+    Test AUC: 0.4575
+    Test AUPR: 0.1602 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x37.4
+    Test AUC: 0.4976
+    Test AUPR: 0.1903 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x30.2
+    Test AUC: 0.4391
+    Test AUPR: 0.1534 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 11: Negative Ratio = 2.0, Sampling = random
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 2.00:1
+Negative sampling method: random
+Using RANDOM negative sampling
+Selected 1016 train non-edges from training graph
+Remaining non-edges after removing train non-edges: 123102 (from 124116 original)
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 1016 non-edges (ratio: 1:2.00)
+  Test: 126 edges, 252 non-edges
+  Negative sampling ratio used: 2.0:1
+  Sampling method used: random
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x61.4
+    Test AUC: 0.4397
+    Test AUPR: 0.3119 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x66.6
+    Test AUC: 0.4981
+    Test AUPR: 0.3386 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x73.9
+    Test AUC: 0.5026
+    Test AUPR: 0.3755 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x63.5
+    Test AUC: 0.4678
+    Test AUPR: 0.3229 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x73.5
+    Test AUC: 0.4954
+    Test AUPR: 0.3738 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x60.6
+    Test AUC: 0.4345
+    Test AUPR: 0.3080 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 12: Negative Ratio = 2.0, Sampling = BRODER
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 2.00:1
+Negative sampling method: BRODER
+Using BRODER (multiple spanning trees) negative sampling
+  Need 1016 train non-edges and 252 test non-edges
+  Applying Multiple Broder algorithm to select train non-edges...
+    Starting with graph containing 124242 edges.
+    Generating spanning tree #1...
+      Tree #1: Generated 499 edges
+      Removed tree edges. Graph now has 123743 edges
+      Total selected so far: 499 edges
+    Generating spanning tree #2...
+      Tree #2: Generated 499 edges
+      Removed tree edges. Graph now has 123244 edges
+      Total selected so far: 998 edges
+    Generating spanning tree #3...
+      Tree #3: Generated 499 edges
+      Removed tree edges. Graph now has 122745 edges
+      Total selected so far: 1497 edges
+      Trimmed to exact target: 1016 edges
+    Generated 3 spanning trees with 1016 total edges
+Selected 1016 train non-edges using Multiple Broder Trees
+Remaining non-edges after removing train non-edges: 123102 (from 124116 original)
+  Applying Multiple Broder algorithm to select test non-edges...
+    Starting test selection with graph containing 123102 edges.
+    Generating test spanning tree #1...
+      Test tree #1: Generated 499 edges
+      Test total selected so far: 499 edges
+      Trimmed test set to exact target: 252 edges
+    Generated 1 test spanning trees with 252 total edges
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 1016 non-edges (ratio: 1:2.00)
+  Test: 126 edges, 252 non-edges
+  Negative sampling ratio used: 2.0:1
+  Sampling method used: BRODER
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x63.2
+    Test AUC: 0.4602
+    Test AUPR: 0.3214 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x66.6
+    Test AUC: 0.4981
+    Test AUPR: 0.3386 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x71.7
+    Test AUC: 0.5089
+    Test AUPR: 0.3646 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x67.1
+    Test AUC: 0.4965
+    Test AUPR: 0.3408 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x71.9
+    Test AUC: 0.5151
+    Test AUPR: 0.3654 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x63.1
+    Test AUC: 0.4667
+    Test AUPR: 0.3207 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 13: Negative Ratio = 2.0, Sampling = HRNE
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 2.00:1
+Negative sampling method: HRNE
+Using HRNE (HybridNodeEdgeSampler) negative sampling
+  Need 1016 train non-edges and 252 test non-edges
+  Applying HRNE to select train non-edges...
+Selected 1016 train non-edges using HRNE
+Remaining non-edges after removing train non-edges: 123103 (from 124116 original)
+  Applying HRNE to select test non-edges...
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 1016 non-edges (ratio: 1:2.00)
+  Test: 126 edges, 252 non-edges
+  Negative sampling ratio used: 2.0:1
+  Sampling method used: HRNE
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x63.6
+    Test AUC: 0.4453
+    Test AUPR: 0.3233 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x66.6
+    Test AUC: 0.5020
+    Test AUPR: 0.3386 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x71.8
+    Test AUC: 0.4951
+    Test AUPR: 0.3647 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x64.0
+    Test AUC: 0.4629
+    Test AUPR: 0.3253 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x72.1
+    Test AUC: 0.4872
+    Test AUPR: 0.3663 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x62.8
+    Test AUC: 0.4401
+    Test AUPR: 0.3192 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 14: Negative Ratio = 1.0, Sampling = random
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 1.00:1
+Negative sampling method: random
+Using RANDOM negative sampling
+Selected 508 train non-edges from training graph
+Remaining non-edges after removing train non-edges: 123609 (from 124116 original)
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 508 non-edges (ratio: 1:1.00)
+  Test: 126 edges, 126 non-edges
+  Negative sampling ratio used: 1.0:1
+  Sampling method used: random
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x89.6
+    Test AUC: 0.4255
+    Test AUPR: 0.4555 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x99.2
+    Test AUC: 0.4961
+    Test AUPR: 0.5040 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x107.4
+    Test AUC: 0.4930
+    Test AUPR: 0.5458 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x92.8
+    Test AUC: 0.4416
+    Test AUPR: 0.4717 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x106.8
+    Test AUC: 0.4812
+    Test AUPR: 0.5427 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x88.4
+    Test AUC: 0.4154
+    Test AUPR: 0.4493 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 15: Negative Ratio = 1.0, Sampling = BRODER
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 1.00:1
+Negative sampling method: BRODER
+Using BRODER (multiple spanning trees) negative sampling
+  Need 508 train non-edges and 126 test non-edges
+  Applying Multiple Broder algorithm to select train non-edges...
+    Starting with graph containing 124242 edges.
+    Generating spanning tree #1...
+      Tree #1: Generated 499 edges
+      Removed tree edges. Graph now has 123743 edges
+      Total selected so far: 499 edges
+    Generating spanning tree #2...
+      Tree #2: Generated 499 edges
+      Removed tree edges. Graph now has 123244 edges
+      Total selected so far: 998 edges
+      Trimmed to exact target: 508 edges
+    Generated 2 spanning trees with 508 total edges
+Selected 508 train non-edges using Multiple Broder Trees
+Remaining non-edges after removing train non-edges: 123608 (from 124116 original)
+  Applying Multiple Broder algorithm to select test non-edges...
+    Starting test selection with graph containing 123608 edges.
+    Generating test spanning tree #1...
+      Test tree #1: Generated 499 edges
+      Test total selected so far: 499 edges
+      Trimmed test set to exact target: 126 edges
+    Generated 1 test spanning trees with 126 total edges
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 508 non-edges (ratio: 1:1.00)
+  Test: 126 edges, 126 non-edges
+  Negative sampling ratio used: 1.0:1
+  Sampling method used: BRODER
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x90.4
+    Test AUC: 0.3851
+    Test AUPR: 0.4592 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x99.2
+    Test AUC: 0.5040
+    Test AUPR: 0.5040 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x101.3
+    Test AUC: 0.4515
+    Test AUPR: 0.5147 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x95.8
+    Test AUC: 0.4452
+    Test AUPR: 0.4870 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x100.8
+    Test AUC: 0.4498
+    Test AUPR: 0.5122 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x89.8
+    Test AUC: 0.3879
+    Test AUPR: 0.4562 (baseline: 0.0051)
+
+================================================================================
+EXPERIMENT 16: Negative Ratio = 1.0, Sampling = HRNE
+================================================================================
+Generating non-edges from training graph...
+Generating non-edges from original graph...
+Using specified negative sampling ratio: 1.00:1
+Negative sampling method: HRNE
+Using HRNE (HybridNodeEdgeSampler) negative sampling
+  Need 508 train non-edges and 126 test non-edges
+  Applying HRNE to select train non-edges...
+Selected 508 train non-edges using HRNE
+Remaining non-edges after removing train non-edges: 123610 (from 124116 original)
+  Applying HRNE to select test non-edges...
+Using original network density 0.005082 as AUPR baseline
+Split created:
+  Original network density: 0.005082
+  Train: 508 edges, 508 non-edges (ratio: 1:1.00)
+  Test: 126 edges, 126 non-edges
+  Negative sampling ratio used: 1.0:1
+  Sampling method used: HRNE
+  Expected AUPR baseline: 0.005082
+  Training graph density: 0.004072
+Adding topology analysis to split result...
+  Computing optimized topology metrics...
+
+Testing preferential_attachment...
+  Evaluating preferential_attachment on test set...
+  Test Results:
+    AUPR Improvement Factor: x92.0
+    Test AUC: 0.4293
+    Test AUPR: 0.4675 (baseline: 0.0051)
+
+Testing jaccard_coefficient...
+  Evaluating jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x98.4
+    Test AUC: 0.4921
+    Test AUPR: 0.5000 (baseline: 0.0051)
+
+Testing yang_zhang...
+  Evaluating yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x102.4
+    Test AUC: 0.4979
+    Test AUPR: 0.5205 (baseline: 0.0051)
+
+Testing dp_jaccard_coefficient...
+  Evaluating dp_jaccard_coefficient on test set...
+  Test Results:
+    AUPR Improvement Factor: x92.1
+    Test AUC: 0.4421
+    Test AUPR: 0.4683 (baseline: 0.0051)
+
+Testing dp_yang_zhang...
+  Evaluating dp_yang_zhang on test set...
+  Test Results:
+    AUPR Improvement Factor: x101.1
+    Test AUC: 0.4929
+    Test AUPR: 0.5139 (baseline: 0.0051)
+
+Testing dp_preferential_attachment_scaled...
+  Evaluating dp_preferential_attachment_scaled on test set...
+  Test Results:
+    AUPR Improvement Factor: x91.4
+    Test AUC: 0.4273
+    Test AUPR: 0.4646 (baseline: 0.0051)
+
+ EXPERIMENT COMPLETED - ANALYZING RESULTS
+============================================================
+Results saved to Excel file: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_results.xlsx
+
+Creating professional visualizations for RANDOM sampling...
+✓ AUPR Improvement Factor plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_predictions_random.png
+✓ AUC performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_predictions_random.png
+✓ AUPR performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_predictions_random.png
+✓ AUPR Improvement Factor table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_table_random.png
+✓ AUC performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_table_random.png
+✓ AUPR performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_table_random.png
+
+Creating professional visualizations for BRODER sampling...
+✓ AUPR Improvement Factor plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_predictions_broder.png
+✓ AUC performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_predictions_broder.png
+✓ AUPR performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_predictions_broder.png
+✓ AUPR Improvement Factor table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_table_broder.png
+✓ AUC performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_table_broder.png
+✓ AUPR performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_table_broder.png
+
+Creating professional visualizations for HRNE sampling...
+✓ AUPR Improvement Factor plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_predictions_hrne.png
+✓ AUC performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_predictions_hrne.png
+✓ AUPR performance plot: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_predictions_hrne.png
+✓ AUPR Improvement Factor table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_if_table_hrne.png
+✓ AUC performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_auc_table_hrne.png
+✓ AUPR performance table: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\sbm_s166_167_167_pi0.0125_pe0.00125_aupr_table_hrne.png
+Final topology histogram saved to: sbm_s166_167_167_pi0.0125_pe0.00125_predictions\final_topology_histogram_weighted.png
+
+=== TOPOLOGY PRESERVATION ANALYSIS ===
+
+SPECTRAL GAP PRESERVATION:
+                  mean    std  min    max
+sampling_method                          
+BRODER           0.021  0.029  0.0  0.070
+HRNE             0.018  0.025  0.0  0.060
+random           0.019  0.027  0.0  0.065
+
+HUB NODE PRESERVATION:
+                  mean    std    min    max
+sampling_method                            
+BRODER           0.038  0.039  0.005  0.102
+HRNE             0.039  0.040  0.006  0.104
+random           0.039  0.040  0.005  0.102
+
+GRAPH STRUCTURE PRESERVATION:
+                  mean    std    min    max
+sampling_method                            
+BRODER           0.102  0.024  0.074  0.131
+HRNE             0.081  0.024  0.059  0.114
+random           0.121  0.032  0.096  0.172
+
+SAMPLING QUALITY INDEX:
+                  mean    std    min    max
+sampling_method                            
+BRODER           0.206  0.054  0.162  0.295
+HRNE             0.208  0.054  0.165  0.297
+random           0.206  0.055  0.162  0.295
+
+=== COMPLETENESS ANALYSIS ===
+Neg Ratio 20.0 (random): Completeness = 0.1022 (Weight = 0.314)
+Neg Ratio 20.0 (BRODER): Completeness = 0.1022 (Weight = 0.314)
+Neg Ratio 20.0 (HRNE): Completeness = 0.1022 (Weight = 0.314)
+Neg Ratio 10.0 (random): Completeness = 0.0511 (Weight = 0.233)
+Neg Ratio 10.0 (BRODER): Completeness = 0.0511 (Weight = 0.233)
+Neg Ratio 10.0 (HRNE): Completeness = 0.0511 (Weight = 0.233)
+Neg Ratio 5.0 (random): Completeness = 0.0255 (Weight = 0.199)
+Neg Ratio 5.0 (BRODER): Completeness = 0.0255 (Weight = 0.199)
+Neg Ratio 5.0 (HRNE): Completeness = 0.0255 (Weight = 0.199)
+Neg Ratio 2.0 (random): Completeness = 0.0102 (Weight = 0.180)
+Neg Ratio 2.0 (BRODER): Completeness = 0.0102 (Weight = 0.180)
+Neg Ratio 2.0 (HRNE): Completeness = 0.0102 (Weight = 0.180)
+Neg Ratio 1.0 (random): Completeness = 0.0051 (Weight = 0.174)
+Neg Ratio 1.0 (BRODER): Completeness = 0.0051 (Weight = 0.174)
+Neg Ratio 1.0 (HRNE): Completeness = 0.0051 (Weight = 0.174)
+
+Best AUPR Improvement: x107.4
+  Method: yang_zhang
+  Negative Ratio: 1.0
+  Sampling Method: random
+  AUC: 0.4930 | AUPR: 0.5458
+
+Results saved in 'sbm_s166_167_167_pi0.0125_pe0.00125_predictions' directory
