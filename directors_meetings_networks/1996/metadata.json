@@ -1,0 +1,43 @@
+{
+  "network_type": "directors_meetings_1996",
+  "year": 1996,
+  "data_source": "Dutch Corporate Directors Meetings",
+  "description": "Dutch Corporate Directors Network 1996",
+  "network_properties": {
+    "nodes": 1771,
+    "edges": 11303,
+    "density": 0.007212,
+    "average_degree": 12.76,
+    "is_connected": false,
+    "number_connected_components": 54,
+    "average_clustering": 0.9152,
+    "average_path_length": 3.8436,
+    "is_simple": true,
+    "is_directed": false,
+    "has_weights": false,
+    "has_consecutive_node_ids": true,
+    "node_id_range": "0 to 1770"
+  },
+  "node_mapping_info": {
+    "has_remapping": true,
+    "total_nodes": 1771,
+    "original_id_range": [
+      1,
+      4453
+    ],
+    "consecutive_id_range": [
+      0,
+      1770
+    ],
+    "mapping_files": [
+      "node_mapping.json",
+      "node_mapping.csv"
+    ]
+  },
+  "timestamp": "2025-08-29 14:36:07.017191",
+  "directory_path": "directors_meetings/directors_1996",
+  "file_format": "Pickle, EdgeList, DL, Mappings",
+  "original_file": "Dutch Corporate Network Board Interlocks 1976 1996 2001 V1.xls",
+  "sheet_name": "Meetings Between Directors 1996",
+  "reference": "Heemskerk, E.M. (2007), Decline of the Corporate Community"
+}
