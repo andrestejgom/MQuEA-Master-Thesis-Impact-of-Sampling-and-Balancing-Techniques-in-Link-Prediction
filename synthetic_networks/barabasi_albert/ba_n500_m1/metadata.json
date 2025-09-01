@@ -1,0 +1,23 @@
+{
+  "network_type": "barabasi_albert",
+  "parameters": {
+    "n": 500,
+    "m": 1
+  },
+  "description": "Barabasi-Albert scale-free graph with 500 nodes, 1 edges per new node",
+  "network_properties": {
+    "nodes": 500,
+    "edges": 499,
+    "density": 0.004,
+    "average_degree": 1.996,
+    "average_clustering": 0.0,
+    "is_connected": true,
+    "average_path_length": 6.296857715430861,
+    "degree_assortativity": -0.138709999961688,
+    "diameter": 15,
+    "transitivity": 0
+  },
+  "timestamp": "2025-07-19 18:09:39.128197",
+  "directory_path": "fase1_synthetic/barabasi_albert/ba_n500_m1",
+  "file_format": "Pickle, EdgeList"
+}

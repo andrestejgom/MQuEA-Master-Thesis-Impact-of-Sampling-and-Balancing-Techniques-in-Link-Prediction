@@ -1,0 +1,24 @@
+{
+  "network_type": "watts_strogatz",
+  "parameters": {
+    "n": 500,
+    "k": 8,
+    "p": 0.1
+  },
+  "description": "Watts-Strogatz small-world graph with 500 nodes, 8 neighbors, rewiring probability 0.1",
+  "network_properties": {
+    "nodes": 500,
+    "edges": 2000,
+    "density": 0.01603206412825651,
+    "average_degree": 8.0,
+    "average_clustering": 0.462744733044733,
+    "is_connected": true,
+    "average_path_length": 4.409811623246493,
+    "degree_assortativity": -0.020323488439052677,
+    "diameter": 8,
+    "transitivity": 0.4509376975486409
+  },
+  "timestamp": "2025-07-19 18:09:37.148636",
+  "directory_path": "fase1_synthetic/watts_strogatz/ws_n500_k8_p0.100",
+  "file_format": "Pickle, EdgeList"
+}

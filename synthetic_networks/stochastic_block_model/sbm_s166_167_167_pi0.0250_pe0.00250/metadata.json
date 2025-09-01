@@ -1,0 +1,28 @@
+{
+  "network_type": "stochastic_block_model",
+  "parameters": {
+    "sizes": [
+      166,
+      167,
+      167
+    ],
+    "p_intra": 0.025,
+    "p_inter": 0.0025
+  },
+  "description": "Stochastic block model with communities of sizes [166, 167, 167], intra-community probability 0.025, inter-community probability 0.0025",
+  "network_properties": {
+    "nodes": 500,
+    "edges": 1232,
+    "density": 0.009875751503006012,
+    "average_degree": 4.928,
+    "average_clustering": 0.01794132534132534,
+    "is_connected": false,
+    "average_path_length": 4.166368134789187,
+    "degree_assortativity": 0.005609179126813225,
+    "diameter": 8,
+    "transitivity": 0.020809248554913295
+  },
+  "timestamp": "2025-07-19 18:09:48.826761",
+  "directory_path": "fase1_synthetic/stochastic_block_model/sbm_s166_167_167_pi0.0250_pe0.00250",
+  "file_format": "Pickle, EdgeList"
+}

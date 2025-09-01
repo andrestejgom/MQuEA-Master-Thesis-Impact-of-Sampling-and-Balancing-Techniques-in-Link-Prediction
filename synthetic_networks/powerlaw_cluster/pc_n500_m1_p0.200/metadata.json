@@ -1,0 +1,24 @@
+{
+  "network_type": "powerlaw_cluster",
+  "parameters": {
+    "n": 500,
+    "m": 1,
+    "p": 0.2
+  },
+  "description": "Powerlaw cluster graph with 500 nodes, 1 edges per node, triangle probability 0.2",
+  "network_properties": {
+    "nodes": 500,
+    "edges": 499,
+    "density": 0.004,
+    "average_degree": 1.996,
+    "average_clustering": 0.0,
+    "is_connected": true,
+    "average_path_length": 6.308376753507014,
+    "degree_assortativity": -0.16180942291274272,
+    "diameter": 15,
+    "transitivity": 0
+  },
+  "timestamp": "2025-07-19 18:09:40.407369",
+  "directory_path": "fase1_synthetic/powerlaw_cluster/pc_n500_m1_p0.200",
+  "file_format": "Pickle, EdgeList"
+}

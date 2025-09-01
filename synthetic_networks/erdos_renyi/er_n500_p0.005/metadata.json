@@ -1,0 +1,23 @@
+{
+  "network_type": "erdos_renyi",
+  "parameters": {
+    "n": 500,
+    "p": 0.005
+  },
+  "description": "Erdos-Renyi random graph with 500 nodes and edge probability 0.005",
+  "network_properties": {
+    "nodes": 500,
+    "edges": 605,
+    "density": 0.0048496993987975955,
+    "average_degree": 2.42,
+    "average_clustering": 0.0014666666666666665,
+    "is_connected": false,
+    "average_path_length": 6.530714000797766,
+    "degree_assortativity": -0.004341368155055195,
+    "diameter": 15,
+    "transitivity": 0.0020463847203274215
+  },
+  "timestamp": "2025-07-19 18:09:36.642340",
+  "directory_path": "fase1_synthetic/erdos_renyi/er_n500_p0.005",
+  "file_format": "Pickle, EdgeList"
+}
